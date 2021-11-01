@@ -1,0 +1,151 @@
+@use 'sass:math';
+@import './mixins';
+
+//Main palette
+$palette: (
+  50 : #f4f2ff,
+  100 : #d7d2fa,
+  200 : #bdb4f7,
+  300 : #a395f3,
+  400 : #8f7ff1,
+  500 : #7b68ee,
+  600 : #7360ec,
+  700 : #6855e9,
+  800 : #5e4be7,
+  900 : #4b3ae2,
+  A100 : #ffffff,
+  A200 : #fafaff,
+  A400 : #ccc7ff,
+  A700 : #b5adff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+@function main-palette($key: $palette) {
+  @return map-get($palette, $key);
+}
+@function main-contrast($key: $palette) {
+  @return map-get(map-get($palette, contrast), $key);
+}
+
+//Accent palette
+$accent-palette: (
+  50 : #fdede6,
+  100 : #fad1c1,
+  200 : #f7b398,
+  300 : #f4946e,
+  400 : #f17d4f,
+  500 : #ef6630,
+  600 : #ed5e2b,
+  700 : #eb5324,
+  800 : #e8491e,
+  900 : #e43813,
+  A100 : #ffffff,
+  A200 : #ffe4e0,
+  A400 : #ffb8ad,
+  A700 : #ffa393,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+@function accent-palette($key: $accent-palette) {
+  @return map-get($accent-palette, $key);
+}
+@function accent-contrast($key: $accent-palette) {
+  @return map-get(map-get($accent-palette, contrast), $key);
+}
+
+$white: #ffffff;
+$liteGray: #eeeeee;
+$literGray: #fafbfc;
+$gray: #767676;
+$grayscale: #e4e4e4;
+$black: #292d34;
+
+$info-color: #2196F3;
+$info-bg: #E3F2FD;
+
+$danger-color: #f44336;
+$danger-bg: #FCE7E7;
+
+$warning-color: #FFA000;
+$warning-bg: #FFF5E5;
+
+$success-color: #00C853;
+$success-bg: #ECF9F3;
+
+$blue: #3751ff;
+$light-blue: rgba(55,81,255,.08);
+
+$theme-main-color: #7b68ee;
+$theme-accent-color: #ef6630;
+
+$box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+
+//Main
+$main-fs: 16px;
+$main-ff: 'Roboto', sans-serif;
+
+$main-fw: 400;
+$medium-fw: 500;
+$semibold-fw: 600;
+
+$module: 10px;
+$main-lh: math.div($module * 2, $main-fs);
+$module-rem: math.div($module, $main-fs) * 1rem;
+$animation: ease-in-out;
+
+$accent-color:#2759fa;
+$main-bg: $liteGray;
+$main-color: $black;
+$boxed-width: 1140px;
+
+:root {
+  --main-color: #292d34;
+  --main-bg: #fafbfc;
+  --boxed-width: 1140px;
+  --theme-main-color: #7b68ee;
+  --theme-main-color-dark: #5f48ea;
+  --theme-main-color-light: #d3cdf9;
+}
+
+$shape: 4px;
+$shadow: 6px 6px 20px 0 rgba(0, 0, 0, 0.08);
+$secondary-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 
+                   0px 3px 4px rgba(0, 0, 0, 0.12), 
+                   0px 1px 5px rgba(0, 0, 0, 0.2);
+$shadow-hover: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+
+$animation: ease-in-out;
+
+//Headers
+$headers-ff: $main-ff;
+$headers-fw: $medium-fw;
+$header-color: $black;

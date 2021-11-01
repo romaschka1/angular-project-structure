@@ -1,0 +1,4 @@
+@function toRem($value) {
+  $remSize: math.div($value, $main-fs);
+  @return #{$remSize}rem;
+}
